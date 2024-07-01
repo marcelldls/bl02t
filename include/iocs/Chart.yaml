@@ -16,6 +16,6 @@ appVersion: 0.0.1b1
 type: application
 
 dependencies:
-  - name: shared
+  - name: ioc-instance
     version: "3.4.4"
-    repository: file://../../helm/shared
+    repository: "oci://ghcr.io/epics-containers"

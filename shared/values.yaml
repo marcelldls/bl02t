@@ -20,7 +20,7 @@ ioc-instance:
   # useAffinity - only run on nodes with label beamline:<beamline-name>
   # or location:<location-name>
   # Comment out useAffiniity for dedicated cluster, set to true for shared cluster
-  
+
 
   # The following are added to the pod's environment and are shared by all
   # IOCs. TODO - these defaults are for a lab crate in DLS - if you have
