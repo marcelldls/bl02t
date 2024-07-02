@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bl01t
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: telamon
+    namespace: bl01t
+  source:
+    path: apps
+    repoURL: https://github.com/gilesknap/bl02t.git
+    targetRevision: HEAD
+    helm:
+      valuesObject:
+        destination:
+          name: telamon
+  sources: []
+  project: bl01t
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
