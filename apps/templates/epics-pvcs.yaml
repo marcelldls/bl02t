@@ -7,9 +7,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: bl01t
+    namespace: hgv27681
     server: { { .Values.spec.destination.server } }
-  project: bl01t
+  project: hgv27681
   source:
     path: services/epics-pvcs
     repoURL: { { .Values.spec.source.repoURL } }

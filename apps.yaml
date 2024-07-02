@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bl01t
+  name: hgv27681
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: telamon
-    namespace: bl01t
+    namespace: hgv27681
   source:
     path: apps
     repoURL: https://github.com/gilesknap/bl02t.git
@@ -17,7 +17,7 @@ spec:
         destination:
           name: telamon
   sources: []
-  project: bl01t
+  project: hgv27681
   syncPolicy:
     automated:
       prune: true
