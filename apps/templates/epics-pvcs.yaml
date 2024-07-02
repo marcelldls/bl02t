@@ -4,13 +4,13 @@ metadata:
   name: epics-pvcs
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: hgv27681
-    server: {{ .Values.spec.destination.server }}
-  project: hgv27681
+    namespace: bl01t
+    server: { { .Values.spec.destination.server } }
+  project: bl01t
   source:
     path: services/epics-pvcs
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: { { .Values.spec.source.repoURL } }
+    targetRevision: { { .Values.spec.source.targetRevision } }
