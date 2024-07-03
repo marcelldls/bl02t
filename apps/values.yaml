@@ -1,6 +1,7 @@
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    name:
+    namespace:
   source:
     repoURL: https://github.com/gilesknap/bl02t
     targetRevision: HEAD

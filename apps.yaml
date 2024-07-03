@@ -6,7 +6,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: telamon
+    name: argus
     namespace: hgv27681
   source:
     path: apps
@@ -15,8 +15,8 @@ spec:
     helm:
       valuesObject:
         destination:
-          name: telamon
-  sources: []
+          name: pollux
+          namespace: hgv27681
   project: hgv27681
   syncPolicy:
     automated:
