@@ -1,8 +1,8 @@
 # beamline bl02t IOC Instances and Services
 
-This repository holds the a definition of beamline bl02t IOC Instances and services. Each sub folder of the `services` directory contains a helm chart for a specific service or IOC.
+This is an example repo for deploying a demo set of IOCs using Argo CD.
 
-NOTE: in order to take advantage of version control, you must deploy these services using the edge-containers-cli. This will ensure that the services are deployed from a specific tag of this repository and that the version number is recorded in the cluster.
-
-See https://github.com/epics-containers/edge-containers-cli for more information.
-
+NOTE: if an app gets stuck deleting then remove the finaliser as follows:
+```bash
+k patch apps bl45p -n hgv27681  -p '{"metadata":{"finalizers":null}}' --type=merge
+```

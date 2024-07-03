@@ -16,10 +16,10 @@ spec:
     helm:
       valuesObject:
         spec:
-          project: hgv27681
+          project: bl45p
           destination:
             name: argus
-            namespace: hgv27681
+            namespace: bl45p
   syncPolicy:
     automated:
       prune: true
