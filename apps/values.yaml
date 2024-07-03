@@ -1,7 +1,7 @@
 spec:
   destination:
-    name:
-    namespace:
+    name: ""
+    namespace: ""
   source:
     repoURL: https://github.com/gilesknap/bl02t
     targetRevision: HEAD
