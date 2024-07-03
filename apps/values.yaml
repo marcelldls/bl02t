@@ -1,7 +1,7 @@
 spec:
   project: ""
   destination:
-    name: pollux
+    name: ""
     namespace: ""
   source:
     repoURL: https://github.com/gilesknap/bl02t
