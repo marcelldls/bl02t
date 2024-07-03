@@ -1,4 +1,5 @@
 spec:
+  project: ""
   destination:
     name: ""
     namespace: ""

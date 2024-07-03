@@ -1,10 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hgv27681
+  name: bl02t
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  project: hgv27681
   destination:
     name: argus
     namespace: hgv27681
@@ -14,10 +15,11 @@ spec:
     targetRevision: HEAD
     helm:
       valuesObject:
-        destination:
-          name: pollux
-          namespace: hgv27681
-  project: hgv27681
+        spec:
+          project: hgv27681
+          destination:
+            name: argus
+            namespace: hgv27681
   syncPolicy:
     automated:
       prune: true
