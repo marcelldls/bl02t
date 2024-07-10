@@ -3,7 +3,7 @@ destination:
   name: pollux
   namespace: bl01t
 source:
-  repoURL: https://github.com/epics-containers/bl02t.git
+  repoURL: https://github.com/gilesknap/bl02t.git
   targetRevision: main
 
 services:
