@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bl02t
+  name: bl01t
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: bl45p
+  project: bl01t
   destination:
     name: argus
-    namespace: bl45p
+    namespace: bl01t
   source:
     path: apps
     repoURL: https://github.com/gilesknap/bl02t.git

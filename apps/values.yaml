@@ -1,7 +1,7 @@
 project: bl45p
 destination:
   name: pollux
-  namespace: bl45p
+  namespace: bl01t
 source:
   repoURL: https://github.com/epics-containers/bl02t.git
   targetRevision: main
