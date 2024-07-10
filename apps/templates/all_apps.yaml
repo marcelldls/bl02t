@@ -1,26 +1,54 @@
-{{ $currentScope := .}}
-{{- range .Values.services }}
+{{- $currentScope := .}}
+{{- range .Values.services -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ . }}
+  name: {{ .service }}
   namespace: {{ $currentScope.Release.Namespace }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: {{ default $currentScope.Release.Namespace $currentScope.Values.spec.project }}
+  project: {{ default $currentScope.Release.Namespace $currentScope.Values.project }}
   destination:
-    namespace: {{ $currentScope.Values.spec.destination.namespace }}
-    name: {{ $currentScope.Values.spec.destination.name }}
+    namespace: {{ $currentScope.Values.destination.namespace }}
+    name: {{ $currentScope.Values.destination.name }}
   source:
-    path: services/{{ . }}
-    repoURL: {{ $currentScope.Values.spec.source.repoURL }}
-    targetRevision: {{ $currentScope.Values.spec.source.targetRevision }}
+    repoURL: {{ default $currentScope.Values.source.repoURL .repoURL }}
+    path: services/{{ default .service .folder }}
+    chart: {{ default "" .chart }}
+    targetRevision: {{ default $currentScope.Values.source.targetRevision .targetRevision }}
+    helm:
+      parameters:
+        - name: ioc-instance.enabled
+          value: {{ ternary true false (ne .enabled false) | quote }}
+        {{-  range $k, $v := .values }}
+        - name: {{ $k }}
+          value: {{ $v | quote }}
+        {{- end }}
+      version: v3
+      valueFiles:
+        - ../beamline_values.yaml
+        - values.yaml
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
----
+    syncOptions:
+      # don't restart pods unless there has been a change
+      - ApplyOutOfSyncOnly=true
+      - RespectIgnoreDifferences=true
 
-{{- end }}
+  # allow ec to start/stop services without sync undoing that
+  # I think we prefer use of 'enabled' as an override
+  # ignoreDifferences:
+  # - group: apps
+  #   kind: Deployment
+  #   jsonPointers:
+  #   - /spec/replicas
+  # - group: apps
+  #   kind: StatefulSet
+  #   jsonPointers:
+  #   - /spec/replicas
+---
+{{- end -}}

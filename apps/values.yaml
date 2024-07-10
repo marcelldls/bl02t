@@ -1,11 +1,10 @@
-spec:
-  project: ""
-  destination:
-    name: ""
-    namespace: ""
-  source:
-    repoURL: https://github.com/gilesknap/bl02t
-    targetRevision: HEAD
+project: bl45p
+destination:
+  name: pollux
+  namespace: bl45p
+source:
+  repoURL: https://github.com/epics-containers/bl02t.git
+  targetRevision: main
 
 services:
   - epics-pvcs
