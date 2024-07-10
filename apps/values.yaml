@@ -1,7 +1,7 @@
-project: bl01t
+project: esq51579
 destination:
-  name: pollux
-  namespace: bl01t
+  name: argus
+  namespace: esq51579
 source:
   repoURL: https://github.com/gilesknap/bl02t.git
   targetRevision: main
