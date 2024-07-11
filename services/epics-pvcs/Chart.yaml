@@ -12,6 +12,6 @@ type: application
 
 dependencies:
   - name: epics-pvcs
-    version: "3.4.4"
+    version: 3.5.2+b6
     # repository: "file:///scratch/hgv27681/work/ec-helm-charts/Charts/epics-pvcs"
     repository: "oci://ghcr.io/epics-containers"

@@ -5,9 +5,9 @@ destination:
 source:
   repoURL: https://github.com/marcelldls/bl02t
   targetRevision: main
-
 services:
   - service: epics-pvcs
   - service: epics-opis
+    files: ["nginx.conf"]
   - service: bl02t-ea-test-01
     files: ["ioc.yaml", "ioc.db" ]
