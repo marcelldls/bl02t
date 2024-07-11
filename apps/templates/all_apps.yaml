@@ -30,11 +30,10 @@ spec:
         - ../beamline_values.yaml
         - values.yaml
       fileParameters:
-      - name: global.files.one
-        path: config/my.db
-      - name: global.files.two
-        path: config/my.yaml
-
+      {{-  range .files  }}
+      - name: global.files.{{ . }}
+        path: config/{{ . }}
+      {{- end }}
   syncPolicy:
     automated:
       prune: true
