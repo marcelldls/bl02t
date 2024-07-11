@@ -10,3 +10,6 @@ services:
   - service: epics-pvcs
   - service: epics-opis
   - service: bl02t-ea-test-01
+    chart: ioc-instance
+    repoURL: ghcr.io/epics-containers/ioc-instance
+    targetRevision: 3.5.2+b3

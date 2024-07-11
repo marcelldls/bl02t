@@ -29,6 +29,11 @@ spec:
       valueFiles:
         - ../beamline_values.yaml
         - values.yaml
+      fileParameters:
+      - name: files.one
+        path: config/ioc.db
+      - name: files.two
+        path: config/ioc.yaml
 
   syncPolicy:
     automated:
