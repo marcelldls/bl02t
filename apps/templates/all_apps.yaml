@@ -30,9 +30,9 @@ spec:
         - ../beamline_values.yaml
         - values.yaml
       fileParameters:
-      - name: files.one
+      - name: global.files.one
         path: config/my.db
-      - name: files.two
+      - name: global.files.two
         path: config/my.yaml
 
   syncPolicy:
