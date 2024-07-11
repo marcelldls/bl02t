@@ -31,9 +31,9 @@ spec:
         - values.yaml
       fileParameters:
       - name: files.one
-        path: config/ioc.db
+        path: config/my.db
       - name: files.two
-        path: config/ioc.yaml
+        path: config/my.yaml
 
   syncPolicy:
     automated:
