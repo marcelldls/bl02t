@@ -31,7 +31,7 @@ spec:
         - values.yaml
       fileParameters:
       {{-  range .files  }}
-      - name: global.files.{{ . }}
+      - name: global.files.{{ . | replace "." "_" }}
         path: config/{{ . }}
       {{- end }}
   syncPolicy:
