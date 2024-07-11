@@ -5,6 +5,7 @@ metadata:
   labels:
     app: {{ .Release.Name }}
 data:
-{{- $config_path := .Release.Name -}}
-# contents of the ioc instance config folder
-{{ (.Files.Glob "$config_path/*").AsConfig | indent 2 }}
+{{- range $k, $v := .Values.files }}
+  {{ $k }}: |-
+{{ $v | indent 4 }}
+{{- end }}
