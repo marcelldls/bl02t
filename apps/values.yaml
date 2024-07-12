@@ -14,7 +14,6 @@ services:
   epics-pvcs:
   epics-opis:
     enabled: false
-    files: ["nginx.conf"]
   bl02t-ea-test-01:
     enabled: true
     files: ["ioc.yaml", "ioc.db"]
