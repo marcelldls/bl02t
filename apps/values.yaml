@@ -5,9 +5,15 @@ destination:
 source:
   repoURL: https://github.com/marcelldls/bl02t
   targetRevision: main
+
+# NOTE: fields that appear here will show up in the root app parameters and can
+# therefore be overriden in the UI (or CLI).
+# Fields added in 'values:' in the all_apps.yaml template are not overrideable
+# AFAIK (but fields added in the  parameters section are)
 services:
-  - service: epics-pvcs
-  - service: epics-opis
-    files: ["nginx.conf"]
-  - service: bl02t-ea-test-01
-    files: ["ioc.yaml", "ioc.db" ]
+  epics-pvcs:
+  epics-opis:
+    enabled: false
+  bl02t-ea-test-01:
+    enabled: true
+    files: ["ioc.yaml", "ioc.db"]
