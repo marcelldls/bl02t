@@ -18,3 +18,7 @@ services:
     enabled: true
     files: ["ioc.yaml", "ioc.db"]
     ioc: True
+  bl02t-ea-test-02:
+    enabled: true
+    files: ["ioc.yaml", "ioc.db"]
+    ioc: True
