@@ -11,6 +11,8 @@ metadata:
   namespace: {{ $currentScope.Release.Namespace }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  labels:
+    epics-service: True
 spec:
   project: {{ default $currentScope.Release.Namespace $currentScope.Values.project }}
   destination:
