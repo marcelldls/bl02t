@@ -11,8 +11,10 @@ metadata:
   namespace: {{ $currentScope.Release.Namespace }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  {{ if $settings.ioc }}
   labels:
-    {{-  range $settings.labels  }}
+    edge-service: "True"
+  {{ end }}
 spec:
   project: {{ default $currentScope.Release.Namespace $currentScope.Values.project }}
   destination:
