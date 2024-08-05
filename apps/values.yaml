@@ -17,3 +17,5 @@ services:
   bl02t-ea-test-01:
     enabled: true
     files: ["ioc.yaml", "ioc.db"]
+    labels:
+      edge-service: "True"
