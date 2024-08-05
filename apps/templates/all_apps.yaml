@@ -12,7 +12,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    epics-service: "True"
+    edge-service: "True"
 spec:
   project: {{ default $currentScope.Release.Namespace $currentScope.Values.project }}
   destination:
